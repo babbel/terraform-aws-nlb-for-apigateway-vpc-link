@@ -5,7 +5,7 @@ output "apigateway_vpc_link" {
 
 output "subnets" {
   description = "Subnets used by the NLB"
-  value       = values(module.subnets.this)
+  value       = values(module.subnets)[*].this
 }
 
 output "this" {
