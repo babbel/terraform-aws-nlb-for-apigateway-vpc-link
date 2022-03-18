@@ -9,7 +9,7 @@ This module will also create dedicated subnets. Those are necessary for restrict
 ```tf
 module "nlb" {
   source  = "babbel/nlb-for-apigateway-vpc-link/aws"
-  version = "~> 1.0"
+  version = "~> 1.1"
 
   name = "example"
 
