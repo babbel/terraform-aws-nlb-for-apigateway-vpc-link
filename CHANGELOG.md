@@ -1,4 +1,7 @@
-# Changelog
+# NOTE: CHANGELOG.md is deprecated
+
+After the release of v1.2.1, please see the [GitHub release notes](https://github.com/babbel/terraform-aws-nlb-for-apigateway-vpc-link/releases)
+for the module in order to view the most up-to-date changes.
 
 ## v1.2.1
 
