@@ -14,7 +14,7 @@ module "nlb" {
     local-b = "10.0.1.0/24"
   }
 
-  tags = {
+  default_tags = {
     app = "example"
     env = "production"
   }
