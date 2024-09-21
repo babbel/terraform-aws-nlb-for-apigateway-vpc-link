@@ -24,7 +24,7 @@ Map of tags assigned to all AWS resources created by this module.
 EOS
 }
 
-varialbe "lb_tags" {
+variable "lb_tags" {
   type    = map(string)
   default = {}
 
@@ -41,7 +41,7 @@ Name of the NLB.
 EOS
 }
 
-varialbe "route_table_tags" {
+variable "route_table_tags" {
   type    = map(string)
   default = {}
 
@@ -50,7 +50,7 @@ Map of tags assigned to the route tables.
 EOS
 }
 
-varialbe "subnet_tags" {
+variable "subnet_tags" {
   type    = map(string)
   default = {}
 
