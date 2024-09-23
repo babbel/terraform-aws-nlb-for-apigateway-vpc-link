@@ -1,26 +1,34 @@
 variable "cidr_blocks" {
-  description = "Map of subnet CIDRs by availability zone used by the NLB"
-
   type = map(string)
+
+  description = <<EOS
+Map of subnet CIDRs by availability zone used by the NLB.
+EOS
 }
 
 variable "name" {
-  description = "Name of the NLB"
-
   type = string
+
+  description = <<EOS
+Name of the NLB.
+EOS
 }
 
 variable "tags" {
-  description = "Map of tags to assign to all resources supporting tags (in addition to the `Name` tag)"
-
   type    = map(string)
   default = {}
+
+  description = <<EOS
+Map of tags assigned to all AWS resources created by this module.
+EOS
 }
 
 variable "vpc" {
-  description = "VPC where the NLB and the subnets will be created"
-
   type = object({
     id = string
   })
+
+  description = <<EOS
+VPC where the NLB and the subnets will be created.
+EOS
 }
