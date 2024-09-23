@@ -10,7 +10,7 @@ module "subnets" {
   availability_zone = each.key
   cidr_block        = each.value
 
-  tags = var.default_tags
+  default_tags = var.default_tags
 }
 
 # NLB
