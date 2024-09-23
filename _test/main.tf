@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 module "nlb" {
-  source  = "./.."
+  source = "./.."
 
   name = "example"
 
