@@ -31,6 +31,24 @@ Name of the NLB.
 EOS
 }
 
+variable "route_table_tags" {
+  type    = map(string)
+  default = {}
+
+  description = <<EOS
+Map of tags assigned to the route table.
+EOS
+}
+
+variable "subnet_tags" {
+  type    = map(string)
+  default = {}
+
+  description = <<EOS
+Map of tags assigned to the subnet.
+EOS
+}
+
 variable "vpc" {
   type = object({
     id = string

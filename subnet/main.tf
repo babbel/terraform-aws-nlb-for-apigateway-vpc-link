@@ -8,7 +8,7 @@ resource "aws_subnet" "this" {
 
   tags = merge({
     Name = "private - ${var.name} - ${var.availability_zone}"
-  }, var.default_tags)
+  }, var.default_tags, var.subnet_tags)
 }
 
 resource "aws_route_table" "this" {
@@ -16,7 +16,7 @@ resource "aws_route_table" "this" {
 
   tags = merge({
     Name = "private - ${var.name} - ${var.availability_zone}"
-  }, var.default_tags)
+  }, var.default_tags, var.route_table_tags)
 }
 
 resource "aws_route_table_association" "this" {
