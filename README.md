@@ -19,10 +19,5 @@ module "nlb" {
     eu-west-1a = cidrsubnet(aws_vpc.this, 8, 0)
     eu-west-1b = cidrsubnet(aws_vpc.this, 8, 1)
   }
-
-  tags = {
-    app = "example"
-    env = "production"
-  }
 }
 ```
