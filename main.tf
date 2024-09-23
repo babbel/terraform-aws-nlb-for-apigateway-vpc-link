@@ -10,7 +10,7 @@ module "subnets" {
   availability_zone = each.key
   cidr_block        = each.value
 
-  tags = var.tags
+  tags = var.default_tags
 }
 
 # NLB
@@ -23,7 +23,7 @@ resource "aws_lb" "this" {
   internal = true
   subnets  = values(module.subnets)[*].this.id
 
-  tags = var.tags
+  tags = var.default_tags
 }
 
 # API Gateway VPC Link
@@ -32,5 +32,5 @@ resource "aws_api_gateway_vpc_link" "this" {
   name        = var.name
   target_arns = [aws_lb.this.arn]
 
-  tags = var.tags
+  tags = var.default_tags
 }

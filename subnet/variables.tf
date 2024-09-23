@@ -14,19 +14,19 @@ Subnet CIDR.
 EOS
 }
 
+variable "default_tags" {
+  type = map(string)
+
+  description = <<EOS
+Map of tags assigned to all AWS resources created by this module.
+EOS
+}
+
 variable "name" {
   type = string
 
   description = <<EOS
 Name of the NLB.
-EOS
-}
-
-variable "tags" {
-  type = map(string)
-
-  description = <<EOS
-Map of tags assigned to all AWS resources created by this module.
 EOS
 }
 
