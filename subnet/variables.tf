@@ -36,7 +36,7 @@ variable "route_table_tags" {
   default = {}
 
   description = <<EOS
-Map of tags assigned to the route table.
+Map of tags assigned to the route table created by this module. Tags in this map will override tags in `var.default_tags`.
 EOS
 }
 
@@ -45,7 +45,7 @@ variable "subnet_tags" {
   default = {}
 
   description = <<EOS
-Map of tags assigned to the subnet.
+Map of tags assigned to the subnet created by this module. Tags in this map will override tags in `var.default_tags`.
 EOS
 }
 

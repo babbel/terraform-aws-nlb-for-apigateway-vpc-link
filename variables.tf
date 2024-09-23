@@ -3,7 +3,7 @@ variable "api_gateway_vpc_link_tags" {
   default = {}
 
   description = <<EOS
-Map of tags assigned to the API Gateway VPC Link.
+Map of tags assigned to the API Gateway VPC Link created by this module. Tags in this map will override tags in `var.default_tags`.
 EOS
 }
 
@@ -29,7 +29,7 @@ variable "lb_tags" {
   default = {}
 
   description = <<EOS
-Map of tags assigned to the NLB.
+Map of tags assigned to the NLB created by this module. Tags in this map will override tags in `var.default_tags`.
 EOS
 }
 
@@ -46,7 +46,7 @@ variable "route_table_tags" {
   default = {}
 
   description = <<EOS
-Map of tags assigned to the route tables.
+Map of tags assigned to the route tables created by this module. Tags in this map will override tags in `var.default_tags`.
 EOS
 }
 
@@ -55,7 +55,7 @@ variable "subnet_tags" {
   default = {}
 
   description = <<EOS
-Map of tags assigned to the subnets.
+Map of tags assigned to the subnets created by this module. Tags in this map will override tags in `var.default_tags`.
 EOS
 }
 
