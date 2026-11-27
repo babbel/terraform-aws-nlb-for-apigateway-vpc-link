@@ -24,6 +24,20 @@ Map of tags assigned to all AWS resources created by this module.
 EOS
 }
 
+variable "enforce_security_group_inbound_rules_on_private_link_traffic" {
+  type    = string
+  default = "off"
+
+  description = <<EOS
+Whether the inbound rules of `var.security_group_ids` apply to PrivateLink traffic, i.e. to traffic from the API Gateway VPC Link. Either `on` or `off`. Only used if `var.security_group_ids` is set.
+EOS
+
+  validation {
+    condition     = contains(["on", "off"], var.enforce_security_group_inbound_rules_on_private_link_traffic)
+    error_message = "The value must be either \"on\" or \"off\"."
+  }
+}
+
 variable "lb_tags" {
   type    = map(string)
   default = {}
@@ -47,6 +61,17 @@ variable "route_table_tags" {
 
   description = <<EOS
 Map of tags assigned to the route tables created by this module. Tags in this map will override tags in `var.default_tags`.
+EOS
+}
+
+variable "security_group_ids" {
+  type    = list(string)
+  default = null
+
+  description = <<EOS
+List of security group IDs assigned to the NLB. If `null`, the NLB is created without security groups.
+
+Security groups can only be added to an NLB which has been created with at least one security group. Changing this from `null` to a list (or back) replaces the NLB and therefore the API Gateway VPC Link.
 EOS
 }
 

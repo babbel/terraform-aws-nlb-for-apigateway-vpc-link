@@ -26,6 +26,10 @@ resource "aws_lb" "this" {
   internal = true
   subnets  = values(module.subnets)[*].this.id
 
+  security_groups = var.security_group_ids
+
+  enforce_security_group_inbound_rules_on_private_link_traffic = var.security_group_ids == null ? null : var.enforce_security_group_inbound_rules_on_private_link_traffic
+
   tags = merge(var.default_tags, var.lb_tags)
 }
 

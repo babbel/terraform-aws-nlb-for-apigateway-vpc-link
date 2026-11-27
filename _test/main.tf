@@ -19,3 +19,18 @@ module "nlb" {
     env = "production"
   }
 }
+
+module "nlb-with-security-groups" {
+  source = "./.."
+
+  name = "example-with-security-groups"
+
+  vpc = { id = "vpc-01234567" }
+
+  cidr_blocks = {
+    local-a = "10.0.2.0/24"
+    local-b = "10.0.3.0/24"
+  }
+
+  security_group_ids = ["sg-01234567"]
+}
